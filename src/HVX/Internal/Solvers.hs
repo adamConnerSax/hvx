@@ -12,6 +12,8 @@ module HVX.Internal.Solvers
   , ellipsoidLoop
   ) where
 
+import Prelude hiding ((<>))
+
 import Data.List
 import Data.Ord
 import Data.Maybe

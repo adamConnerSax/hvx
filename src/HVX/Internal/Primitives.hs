@@ -12,6 +12,7 @@ module HVX.Internal.Primitives
   , getProperties
   ) where
 
+import Prelude hiding ((<>))
 import Numeric.LinearAlgebra
 
 import HVX.Internal.Matrix
@@ -94,7 +95,7 @@ getFun Min x = reduceMat minimum x
 getFun (Norm p) x = scalarMat $ lpnorm p x
 getFun (Berhu m) x =
   cmap (\y -> if abs y <= m then abs y else (abs y ** 2 + m ** 2) / (2 * m)) x
-getFun (Huber m) x = 
+getFun (Huber m) x =
   cmap (\y -> if abs y <= m then abs y ** 2 else 2 * m * abs y - m ** 2) x
 getFun (Quadform m) x = tr x <> m <> x
 getFun PowBaseP0 x = konst 1.0 ((rows x), (cols x))

@@ -2,6 +2,8 @@
 
 module HVX.Internal.SymbolicSubgrad where
 
+import Prelude hiding ((<>))
+
 import Numeric.LinearAlgebra
 
 import HVX.Internal.Matrix

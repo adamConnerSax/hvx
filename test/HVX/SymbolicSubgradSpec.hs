@@ -2,6 +2,8 @@
 
 module HVX.SymbolicSubgradSpec (main, spec) where
 
+import Prelude hiding ((<>))
+
 import Test.Hspec
 import Test.QuickCheck hiding ((><))
 import Numeric.LinearAlgebra
